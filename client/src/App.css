@@ -470,6 +470,17 @@ a {
   color: white;
 }
 
+.demo-site-only {
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+}
+.demo-site-only h6 {
+  margin: 0;
+  padding: 1px;
+  color: white;
+}
+
 @media only screen and (max-width: 600px) {
   .nav-cart {
     justify-content: center;
@@ -494,15 +505,12 @@ a {
     justify-content: center;
     align-content: center;
   }
-}
 
-.demo-site-only {
-  display: flex;
-  justify-content: center;
-  background-color: gray;
-}
-.demo-site-only h6 {
-  margin: 0;
-  padding: 1px;
-  color: white;
+  .landing h1 {
+    font-size: 5em;
+  }
+
+  .landing h2 {
+    font-size: 1em;
+  }
 }

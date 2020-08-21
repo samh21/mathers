@@ -15,7 +15,7 @@ app.use('/api/products', require('./routes/api/products'));
 app.use('/api/sendmail', require('./routes/api/sendmail'));
 
 // Static assets for production
-if (process.env.NODE_ENV === 'PRODUCTION') {
+if (process.env.NODE_ENV === 'production') {
   // Set static
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {

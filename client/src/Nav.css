@@ -1,0 +1,21 @@
+.navbar {
+  width: 100vw;
+  height: 70px;
+  background-color: #007ea7;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.navbar h5 {
+  margin: 0;
+  color: white;
+  font-size: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    justify-content: flex-start;
+  }
+}

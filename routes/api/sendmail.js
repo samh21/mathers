@@ -14,12 +14,8 @@ const {
 // desc Send Order confirmation
 
 router.post('/', async (req, res) => {
-  // Build products & qty array of objects
-
-  const products = req.body.cartTotal.map((item) => {
-    return { productId: item.id, product: item.name, qty: item.qty };
-  });
-
+  //
+  // Destructure request body
   const {
     name,
     surname,
@@ -32,6 +28,12 @@ router.post('/', async (req, res) => {
   } = req.body.contact;
 
   const cost = req.body.cost;
+
+  // Create products object to be saved to DB
+
+  const products = req.body.cartTotal.map((item) => {
+    return { productId: item.id, product: item.name, qty: item.qty };
+  });
 
   let order = new Order({
     name,
@@ -80,6 +82,7 @@ router.post('/', async (req, res) => {
   });
 
   // configure email
+
   var mailOptions = {
     from: `"Mather's Ice Cream" <${shopEmail}>`,
     // email user entered on confirmation page. Also sends to shop owner
@@ -89,6 +92,7 @@ router.post('/', async (req, res) => {
   };
 
   // send message
+
   transport.sendMail(mailOptions, function (error, info) {
     if (error) {
       return console.log(error);

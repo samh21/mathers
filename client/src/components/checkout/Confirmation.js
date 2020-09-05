@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../CartContext';
+import { CartContext } from '../../CartContext';
 
 export default function Confirmation() {
   const { info } = useContext(CartContext);

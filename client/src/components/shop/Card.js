@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import V from '../img/V';
-import G from '../img/G';
-import { CartContext } from '../CartContext';
+import V from '../../img/V';
+import G from '../../img/G';
+import { CartContext } from '../../CartContext';
 
 const Card = ({ data }) => {
   const { cart } = useContext(CartContext);

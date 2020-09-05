@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<div
+  className="header"
+>
+  <h3>
+    Mather's Home Delivery
+  </h3>
+  <p>
+    Place your order before 
+    Wednesday 27/05/2020
+     for delivery on 
+    Friday 29/05/2020
+    . We deliver to addresses in Forres, Kinloss & Findhorn
+  </p>
+</div>
+`;

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { CartContext } from '../CartContext';
+import { CartContext } from '../../CartContext';
 import CartItem from './CartItem';
 import { Link, useHistory } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';

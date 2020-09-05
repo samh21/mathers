@@ -13,15 +13,19 @@
   "author": "Sam Henderson",
   "license": "MIT",
   "dependencies": {
+    "@testing-library/react": "^10.4.9",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "config": "^3.3.1",
     "express": "^4.17.1",
     "express-validation": "^3.0.5",
     "express-validator": "^6.5.0",
+    "helmet": "^4.1.0",
+    "jest-dom": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.15",
     "nodemailer": "^6.4.8",
+    "react-test-renderer": "^16.13.1",
     "request": "^2.88.2"
   },
   "devDependencies": {

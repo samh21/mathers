@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from './Card';
-import { CartPreview } from './CartPreview';
+import { CartPreview } from '../cart/CartPreview';
 
 export default function CardContainer() {
   const [dbRequest, setDbRequest] = useState([]);
@@ -18,10 +18,10 @@ export default function CardContainer() {
         <CartPreview />
       </div>
       <h1 className="mathers-heading">Mather's Ice Cream</h1>
-      <div className="container">
+      <div data-testid="productCards" className="container">
         {dbRequest &&
           dbRequest.map((d, i) => {
-            return <Card key={i} data={d} />;
+            return <Card data-testid="resolved" key={i} data={d} />;
           })}
       </div>
     </>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Checkout from './Checkout';
+import Checkout from '../checkout/Checkout';
 import CardContainer from './CardContainer';
-import { CartProvider } from '../CartContext';
-import { ViewCart } from './ViewCart';
-import Confirmation from './Confirmation';
+import { CartProvider } from '../../CartContext';
+import { ViewCart } from '../cart/ViewCart';
+import Confirmation from '../checkout/Confirmation';
 
 export default function Shop() {
   return (

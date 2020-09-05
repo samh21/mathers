@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Landing from './components/Landing';
-import Shop from './components/Shop';
+import Shop from './components/shop/Shop';
 
 function App() {
   return (

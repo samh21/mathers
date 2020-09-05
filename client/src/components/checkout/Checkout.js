@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../CartContext';
+import { CartContext } from '../../CartContext';
+import CheckoutItem from './CheckoutItem';
 import { Redirect, Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
@@ -105,21 +106,6 @@ const Checkout = () => {
         <button onClick={handleSubmit}>Order my Ice Cream</button>
       </div>
     </div>
-  );
-};
-
-const CheckoutItem = ({ data }) => {
-  return (
-    <>
-      <tr>
-        <td>{data.name}</td>
-        <td>
-          {data.vegan ? 'Vegan' : null}
-          {data.gluten ? 'Gluten' : null}
-        </td>
-        <td align="right">{data.qty}</td>
-      </tr>
-    </>
   );
 };
 

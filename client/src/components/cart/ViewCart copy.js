@@ -3,8 +3,6 @@ import { CartContext } from '../../CartContext';
 import CartItem from './CartItem';
 import { Link, useHistory } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
-import ContactForm from './ContactForm';
-import Subtotal from './Subtotal';
 
 export const ViewCart = () => {
   const { cart, info } = useContext(CartContext);
@@ -36,13 +34,13 @@ export const ViewCart = () => {
     let info = contact;
     let errors = [];
 
-    !info.name && errors.push('First Name Required');
-    !info.surname && errors.push('Last Name Required');
-    !info.email && errors.push('Email Addres Required');
-    !info.phone && errors.push('Phone Number Required');
-    !info.address1 && errors.push('Address 1 Required');
-    !info.town && errors.push('Town Required');
-    !info.postcode && errors.push('Postcode Required');
+    if (!info.name) errors.push('First Name Required');
+    if (!info.surname) errors.push('Last Name Required');
+    if (!info.email) errors.push('Email Addres Required');
+    if (!info.phone) errors.push('Phone Number Required');
+    if (!info.address1) errors.push('Address 1 Required');
+    if (!info.town) errors.push('Town Required');
+    if (!info.postcode) errors.push('Postcode Required');
 
     setErrorMessages(errors);
 
@@ -74,7 +72,6 @@ export const ViewCart = () => {
         {cartTotal.map((d, i) => {
           return <CartItem key={i} data={d} />;
         })}
-
         <div>
           <div className="subtotal">
             <h5>Subtotal:</h5>
@@ -99,7 +96,6 @@ export const ViewCart = () => {
         <div style={{ textAlign: 'center' }}>
           <h4>Delivery Information</h4>
         </div>
-
         {errorMessages && (
           <div className="form-errors">
             <div>
@@ -109,8 +105,67 @@ export const ViewCart = () => {
             </div>
           </div>
         )}
-        <Subtotal />
-        {/* <ContactForm /> */}
+        <div className="contact">
+          <form className="contact" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              onChange={handleChange}
+              name="name"
+              value={contact.name}
+              placeholder="First Name"
+            />
+
+            <input
+              type="text"
+              onChange={handleChange}
+              name="surname"
+              placeholder="Last Name"
+              value={contact.surname}
+            />
+            <input
+              type="text"
+              onChange={handleChange}
+              name="email"
+              placeholder="Email"
+              value={contact.email}
+            />
+            <input
+              type="text"
+              onChange={handleChange}
+              name="phone"
+              placeholder="Phone"
+              value={contact.phone}
+            />
+            <input
+              type="text"
+              onChange={handleChange}
+              name="address1"
+              placeholder="Address 1"
+              value={contact.address1}
+            />
+            <input
+              type="text"
+              onChange={handleChange}
+              name="address2"
+              placeholder="Address 2"
+              value={contact.address2}
+            />
+            <input
+              type="text"
+              onChange={handleChange}
+              name="town"
+              placeholder="Town"
+              value={contact.town}
+            />
+            <input
+              type="text"
+              onChange={handleChange}
+              name="postcode"
+              placeholder="Post Code"
+              value={contact.postcode}
+            />
+          </form>
+        </div>
         <hr />
         <div className="cart-buttons">
           <Link to="/shop">

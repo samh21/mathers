@@ -15,12 +15,10 @@ export default function Shop() {
 
       <Router>
         <div className="shop">
-          <div className="dark-overlay">
-            <Route path="/shop" exact component={CardContainer} />
-            <Route path="/cart" exact component={ViewCart} />
-            <Route path="/checkout" exact component={Checkout} />
-            <Route path="/confirmation" exact component={Confirmation} />
-          </div>
+          <Route path="/shop" exact component={CardContainer} />
+          <Route path="/cart" exact component={ViewCart} />
+          <Route path="/checkout" exact component={Checkout} />
+          <Route path="/confirmation" exact component={Confirmation} />
         </div>
       </Router>
     </CartProvider>

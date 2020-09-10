@@ -11,7 +11,6 @@ function App() {
     <Router>
       <Route path="/" exact component={Landing} />
       <Route path="/shop" exact component={Shop} />
-      //{' '}
     </Router>
   );
 }

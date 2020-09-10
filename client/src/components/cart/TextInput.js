@@ -7,6 +7,7 @@ const TextInput = (props) => {
     label,
     value,
     required = true,
+    error = null,
     onChange,
     xs = 12,
     sm = 6,
@@ -20,6 +21,7 @@ const TextInput = (props) => {
         value={value}
         required={required}
         size="small"
+        {...(error && { error: true, helperText: error })}
       ></TextField>
     </Grid>
   );

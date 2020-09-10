@@ -1,15 +1,40 @@
 import React from 'react';
-import { Box, Grid } from '@material-ui/core';
+import { Grid, makeStyles, Typography } from '@material-ui/core';
 
-const SubtotalItem = ({ title, value }) => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    fontWeight: 'Bold',
+  },
+}));
+
+const SubtotalItem = ({ title, value, color = 'initial' }) => {
+  const classes = useStyles();
   return (
     <Grid container>
-      <Grid container item xs={12} justify="space-between">
+      <Grid
+        className={classes.root}
+        container
+        item
+        xs={12}
+        justify="space-between"
+      >
         <Grid item>
-          <Box>{title}</Box>
+          <Typography
+            className={classes.root}
+            variant="subtitle1"
+            color={color}
+          >
+            {title}
+          </Typography>
         </Grid>
         <Grid item>
-          <Box>{value}</Box>
+          <Typography
+            className={classes.root}
+            variant="subtitle1"
+            color={color}
+          >
+            {value}
+          </Typography>
         </Grid>
       </Grid>
     </Grid>

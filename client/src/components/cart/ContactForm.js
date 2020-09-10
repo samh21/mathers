@@ -1,13 +1,7 @@
 import React, { useState, useContext } from 'react';
-import {
-  Grid,
-  TextField,
-  makeStyles,
-  Paper,
-  Box,
-  Button,
-  Chip,
-} from '@material-ui/core';
+import { Grid, makeStyles, Button } from '@material-ui/core';
+import { Link as RouterLink, useHistory } from 'react-router-dom';
+import { Link } from '@material-ui/core';
 import { CartContext } from '../../CartContext';
 import TextInput from './TextInput';
 
@@ -18,14 +12,24 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: theme.spacing(1),
     },
   },
-  paper: {
-    paddingTop: theme.spacing(1),
+  buttons: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column-reverse',
+    },
+    '& .MuiGrid-item': {
+      marginBottom: theme.spacing(2),
+    },
   },
 }));
 
 const ContactForm = () => {
+  const [errors, setErrors] = useState({});
+  let history = useHistory();
   const { info } = useContext(CartContext);
   const [contact, setContact] = info;
+  const classes = useStyles();
   const {
     name,
     surname,
@@ -37,7 +41,28 @@ const ContactForm = () => {
     postcode,
   } = contact;
 
-  const classes = useStyles();
+  const handleSubmit = () => {
+    if (validateForm()) {
+      history.push('/checkout');
+    }
+  };
+
+  const validateForm = () => {
+    let validate = {};
+    validate.name = name ? '' : 'Name is required';
+    validate.surname = surname ? '' : 'Name is required';
+    validate.email = /$^|.+@.+..+/.test(email) ? '' : 'Email not valid';
+    validate.email = email ? '' : 'Email required';
+    validate.phone = phone ? '' : 'Phone number required';
+    validate.phone = /^[0-9]+$/.test(phone) ? '' : 'Phone not valid';
+    validate.address1 = address1 ? '' : 'Address 1 required';
+    validate.town = town ? '' : ' Town required';
+    validate.postcode = postcode ? '' : ' Postcode required';
+    console.log(validate);
+    setErrors({ ...validate });
+
+    return Object.values(validate).every((x) => x === '');
+  };
 
   const handleChange = (e) => {
     setContact({
@@ -47,83 +72,94 @@ const ContactForm = () => {
   };
 
   return (
-    <Paper>
-      <Box display="flex" justify="center" margin="auto">
-        <form className={classes.root}>
-          <Grid container>
-            <Grid item xs={1} sm={2}></Grid>
-            <Grid container item xs={10} sm={8}>
-              <TextInput
-                name="name"
-                label="First Name"
-                value={name}
-                onChange={handleChange}
-              />
-              <TextInput
-                name="surname"
-                label="Last Name"
-                value={surname}
-                onChange={handleChange}
-              />
-              <TextInput
-                name="email"
-                label="Email Address"
-                value={email}
-                onChange={handleChange}
-              />
-              <TextInput
-                name="phone"
-                label="Phone Number"
-                value={phone}
-                onChange={handleChange}
-              />
-              <TextInput
-                name="address1"
-                label="Address Line 1"
-                value={address1}
-                onChange={handleChange}
-                sm={12}
-              />
-              <TextInput
-                name="address2"
-                label="Address Line 2"
-                value={address2}
-                onChange={handleChange}
-                sm={12}
-                required={false}
-              />
-              <TextInput
-                name="town"
-                label="City"
-                value={town}
-                onChange={handleChange}
-              />
-              <TextInput
-                name="postcode"
-                label="Postcode"
-                value={town}
-                onChange={handleChange}
-              />
-              <Grid container item xs={12}>
-                <Grid item xs={12}>
-                  <Box className={classes.paper}>
-                    <Button
-                      size="small"
-                      fullWidth
-                      variant="contained"
-                      color="primary"
-                    >
-                      Review Order
-                    </Button>
-                  </Box>
-                </Grid>
-              </Grid>
+    <form className={classes.root}>
+      <Grid container item xs={12} justify="center">
+        <Grid container item xs={12}>
+          <TextInput
+            name="name"
+            label="First Name"
+            value={name}
+            onChange={handleChange}
+            error={errors.name}
+          />
+          <TextInput
+            name="surname"
+            label="Last Name"
+            value={surname}
+            onChange={handleChange}
+            error={errors.surname}
+          />
+          <TextInput
+            name="email"
+            label="Email Address"
+            value={email}
+            onChange={handleChange}
+            error={errors.email}
+          />
+          <TextInput
+            name="phone"
+            label="Phone Number"
+            value={phone}
+            onChange={handleChange}
+            error={errors.phone}
+          />
+          <TextInput
+            name="address1"
+            label="Address Line 1"
+            value={address1}
+            onChange={handleChange}
+            error={errors.address1}
+            sm={12}
+          />
+          <TextInput
+            name="address2"
+            label="Address Line 2"
+            value={address2}
+            onChange={handleChange}
+            sm={12}
+            required={false}
+          />
+          <TextInput
+            name="town"
+            label="City"
+            value={town}
+            onChange={handleChange}
+            error={errors.town}
+          />
+          <TextInput
+            name="postcode"
+            label="Postcode"
+            value={postcode}
+            onChange={handleChange}
+            error={errors.postcode}
+          />
+          <Grid
+            className={classes.buttons}
+            container
+            item
+            xs={12}
+            justify="space-between"
+          >
+            <Grid item xs={12} sm={4}>
+              <Link component={RouterLink} to="/shop">
+                Continue Shopping
+              </Link>
             </Grid>
-            <Grid item xs={1} sm={2}></Grid>
+            <Grid item xs={12} sm={4}>
+              <Button
+                size="small"
+                fullWidth
+                variant="contained"
+                color="primary"
+                onClick={handleSubmit}
+              >
+                Review Order
+              </Button>
+            </Grid>
           </Grid>
-        </form>
-      </Box>
-    </Paper>
+        </Grid>
+      </Grid>
+    </form>
   );
 };
 

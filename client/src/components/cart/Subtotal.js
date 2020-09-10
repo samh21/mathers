@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../../CartContext';
 import SubtotalItem from './SubtotalItem';
 
@@ -26,6 +26,7 @@ const Subtotal = () => {
         <SubtotalItem
           title="Discount"
           value={`-£${numberOfItems * 6 - cost}`}
+          color="secondary"
         />
       ) : null}
       <SubtotalItem title="Delivery" value="Free" />

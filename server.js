@@ -8,7 +8,7 @@ const app = express();
 app.use(
   helmet({
     contentSecurityPolicy: {
-      imgSrc: ["'self'", 'https://imgbb.com/'],
+      imgSrc: '*',
     },
   })
 );

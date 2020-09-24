@@ -70,7 +70,6 @@ const ProductCard = ({ data }) => {
             image={data.img}
             title={data.name}
           /> */}
-          <img className={classes.media} src={data.img} alt={data.name} />
           <CardContent style={{ padding: '8px 0' }}>
             <Typography
               variant="h6"

@@ -21,7 +21,6 @@
     "express": "^4.17.1",
     "express-validation": "^3.0.5",
     "express-validator": "^6.5.0",
-    "helmet": "^4.1.0",
     "jest-dom": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.15",

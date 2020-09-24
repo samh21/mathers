@@ -13,6 +13,7 @@
   "author": "Sam Henderson",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/react": "^10.4.9",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",

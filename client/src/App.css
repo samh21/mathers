@@ -7,7 +7,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #f7ebf2;
+  height: 100%;
+
   /* background-color: #9ad1d4; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -17,8 +18,8 @@ body {
   /* background: url(./img/HM.jpg) no-repeat fixed center center/cover; */
   /* background-color: rgb(197, 231, 245); */
   min-width: 500px;
-  background-color: #f7ebf2;
-  height: 100vh;
+  background-color: #ffffff;
+  min-height: 100vh;
 }
 
 .dark-overlay {
@@ -35,11 +36,11 @@ body {
   height: 100%; */
 }
 
-img {
+/* img {
   object-fit: cover;
   width: 150px;
   height: 150px;
-}
+} */
 
 .img-container {
   position: relative;

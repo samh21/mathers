@@ -4,7 +4,6 @@ import { CartContext } from '../../CartContext';
 export default function Confirmation() {
   const { info } = useContext(CartContext);
   const [contact] = info;
-  console.log(info);
   return (
     <div className="confirmation">
       <div>

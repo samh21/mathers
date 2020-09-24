@@ -7,7 +7,7 @@ import Subtotal from './Subtotal';
 
 import { Grid, Divider, Typography } from '@material-ui/core';
 
-export const ViewCart = () => {
+const ViewCart = () => {
   const { cart } = useContext(CartContext);
   const [cartTotal] = cart;
 
@@ -16,7 +16,7 @@ export const ViewCart = () => {
   }
 
   return (
-    <Grid container justify="center">
+    <Grid container justify="center" style={{ padding: '20px 0' }}>
       <Grid
         item
         xs={12}
@@ -55,3 +55,5 @@ export const ViewCart = () => {
     </Grid>
   );
 };
+
+export default ViewCart;

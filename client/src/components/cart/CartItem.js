@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CartItem = ({ data }) => {
+  console.log(data);
   const classes = useStyles();
   const { cart } = useContext(CartContext);
   const [cartTotal, setCartTotal] = cart;

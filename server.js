@@ -7,9 +7,7 @@ const app = express();
 
 app.use(
   helmet({
-    contentSecurityPolicy: {
-      imgSrc: '*',
-    },
+    contentSecurityPolicy: false,
   })
 );
 

@@ -1,10 +1,17 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const path = require('path');
-// const helmet = require('helmet');
+const helmet = require('helmet');
 
 const app = express();
-// app.use(helmet());
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      imgSrc: ["'self'", 'https://imgbb.com/'],
+    },
+  })
+);
 
 // Connect DB
 connectDB();

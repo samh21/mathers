@@ -67,9 +67,7 @@ const ProductCard = ({ data }) => {
         <Card className={classes.root}>
           <CardMedia
             className={classes.media}
-            image={
-              'https://i.ibb.co/DkW5zq2/13051615-589011801256460-5091228242650125222-n.jpg'
-            }
+            image={data.img}
             title={data.name}
           />
           <CardContent style={{ padding: '8px 0' }}>

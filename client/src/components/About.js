@@ -23,7 +23,7 @@ const About = () => {
         <Grid container>
           <Grid item xs={12} display="flex" container>
             <Grid item xs={1} />
-            <Grid xs={10} md={6}>
+            <Grid item xs={10} md={6}>
               <Box
                 display="flex"
                 flexDirection="column"
@@ -33,7 +33,7 @@ const About = () => {
               >
                 <Box>
                   <Typography variant="h3">Mather's Ice Cream</Typography>
-                  <Typography variant="p">
+                  <Typography variant="subtitle1">
                     Homemade ice cream, sorbets and locally roasted coffee
                     served from the Kiosk at Grant Park. Free home delivery in
                     the Forres area every Friday. We also serve delicious
@@ -47,7 +47,7 @@ const About = () => {
           </Grid>
           <Grid item xs={12} display="flex" container>
             <Grid item xs={1} md={5} />
-            <Grid xs={10} md={6}>
+            <Grid item xs={10} md={6}>
               <Box
                 display="flex"
                 flexDirection="column"
@@ -57,7 +57,7 @@ const About = () => {
               >
                 <Box>
                   <Typography variant="h3">Fresh</Typography>
-                  <Typography variant="p">
+                  <Typography variant="subtitle1">
                     Our products are freshly made to ensure we offer the highest
                     quality. We aim to use seasonal ingredients as much as
                     possible in the products we offer. This includes homegrown
@@ -71,7 +71,7 @@ const About = () => {
           </Grid>
           <Grid item xs={12} display="flex" container>
             <Grid item xs={1} />
-            <Grid xs={10} md={6}>
+            <Grid item xs={10} md={6}>
               <Box
                 display="flex"
                 flexDirection="column"
@@ -81,7 +81,7 @@ const About = () => {
               >
                 <Box>
                   <Typography variant="h3">Local</Typography>
-                  <Typography variant="p">
+                  <Typography variant="subtitle1">
                     We use as much local produce as possible for a number of
                     reasons. We simply believe that supporting local businesses
                     is the responsible thing to do. This also helps to keep our

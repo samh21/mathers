@@ -65,11 +65,12 @@ const ProductCard = ({ data }) => {
     <>
       <Grid item xs={12} sm={6} md={4} lg={4} className={classes.card}>
         <Card className={classes.root}>
-          <CardMedia
+          {/* <CardMedia
             className={classes.media}
             image={data.img}
             title={data.name}
-          />
+          /> */}
+          <img className={classes.media} src={data.img} alt={data.name} />
           <CardContent style={{ padding: '8px 0' }}>
             <Typography
               variant="h6"

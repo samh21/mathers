@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Checkout from '../checkout/Checkout';
 import CardContainer from './CardContainer';
-import { CartProvider } from '../../CartContext';
 import ViewCart from '../cart/ViewCart';
 import Confirmation from '../checkout/Confirmation';
 

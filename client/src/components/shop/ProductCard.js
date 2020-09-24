@@ -5,7 +5,6 @@ import {
   Chip,
   CardMedia,
   Grid,
-  Box,
   Typography,
   makeStyles,
   CardContent,

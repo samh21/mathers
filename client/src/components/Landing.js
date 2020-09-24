@@ -1,16 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {
-  Card,
-  CardMedia,
-  Container,
-  Grid,
-  createMuiTheme,
-  ThemeProvider,
-  AppBar,
-  Toolbar,
-  Typography,
-} from '@material-ui/core';
+import { Grid, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import icecream from '../img/unsplash/icecream.jpg';
 import burger from '../img/unsplash/burger.jpg';
 import coffee from '../img/unsplash/coffee.jpg';

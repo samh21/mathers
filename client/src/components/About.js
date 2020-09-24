@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     width: '100%',
-    height: '100vh',
+    minHeight: '100vh',
     color: 'white',
     fontFamily: 'roboto, serif',
   },

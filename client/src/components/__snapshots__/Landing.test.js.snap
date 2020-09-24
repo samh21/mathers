@@ -1,34 +1,119 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Matches snapshot 1`] = `
-<header
-  className="landing"
+<div
+  className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1"
 >
   <div
-    className="dark"
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12 MuiGrid-grid-xl-12"
   >
-    <h1>
-      Mather's Ice Cream
-    </h1>
-    <h2>
-      Homemade ice cream.... currently home delivery only. Free home delivery in the Forres area every Friday.
-    </h2>
-    <a
-      href="/shop"
-      onClick={[Function]}
-      style={
-        Object {
-          "textDecoration": "none",
-        }
-      }
+    <div
+      className="MuiBox-root MuiBox-root-4 makeStyles-imageDiv-1 makeStyles-imageDiv-3"
+      style={Object {}}
     >
-      <p
-        className="button"
-        href=""
+      <h1
+        style={
+          Object {
+            "fontSize": "5rem",
+            "margin": 0,
+            "padding": 0,
+          }
+        }
       >
-        Enter Shop
+        Ice Cream
+      </h1>
+      <p
+        style={
+          Object {
+            "margin": 0,
+          }
+        }
+      >
+        Home made with locally sourced ingredients. Dairy free and Vegan friendly options avaialble
       </p>
-    </a>
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-outlined makeStyles-button-2 MuiButton-outlinedSizeLarge MuiButton-sizeLarge"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Home Delivery. Order Now
+        </span>
+      </button>
+    </div>
   </div>
-</header>
+  <div
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-6 MuiGrid-grid-xl-6"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-6 makeStyles-imageDiv-1 makeStyles-imageDiv-5"
+      style={Object {}}
+    >
+      <h1
+        style={
+          Object {
+            "fontSize": "5rem",
+            "margin": 0,
+            "padding": 0,
+          }
+        }
+      >
+        Coffee
+      </h1>
+      <p
+        style={
+          Object {
+            "margin": 0,
+          }
+        }
+      >
+        Artisan coffees. Responsibly sourced beans. Roasted locally
+      </p>
+    </div>
+  </div>
+  <div
+    className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-6 MuiGrid-grid-xl-6"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-8 makeStyles-imageDiv-1 makeStyles-imageDiv-7"
+      style={Object {}}
+    >
+      <h1
+        style={
+          Object {
+            "fontSize": "5rem",
+            "margin": 0,
+            "padding": 0,
+          }
+        }
+      >
+        Burgers
+      </h1>
+      <p
+        style={
+          Object {
+            "margin": 0,
+          }
+        }
+      >
+        Made with 21 day aged local Beef. Vegetarian options available
+      </p>
+    </div>
+  </div>
+</div>
 `;

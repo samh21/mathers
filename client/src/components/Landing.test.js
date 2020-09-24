@@ -29,8 +29,7 @@ it('displays correctly', () => {
       <Landing />
     </BrowserRouter>
   );
-  getByText('Enter Shop');
-  getByText(
-    'Homemade ice cream.... currently home delivery only. Free home delivery in the Forres area every Friday.'
-  );
+  getByText('Ice Cream');
+  getByText('Coffee');
+  getByText('Burgers');
 });

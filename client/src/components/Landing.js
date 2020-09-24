@@ -14,7 +14,6 @@ import {
 import icecream from '../img/unsplash/icecream.jpg';
 import burger from '../img/unsplash/burger.jpg';
 import coffee from '../img/unsplash/coffee.jpg';
-import '../components/landing.css';
 import GridItem from './GridItem';
 
 export default function Landing() {
@@ -22,20 +21,6 @@ export default function Landing() {
     spacing: 2,
   });
   return (
-    // <header className="landing">
-    //   <div className="dark">
-    //     <h1>Mather's Ice Cream</h1>
-    //     <h2>
-    //       Homemade ice cream.... currently home delivery only. Free home
-    //       delivery in the Forres area every Friday.
-    //     </h2>
-    //     <Link to="/shop" style={{ textDecoration: 'none' }}>
-    //       <p className="button" href="">
-    //         Enter Shop
-    //       </p>
-    //     </Link>
-    //   </div>
-    // </header>
     <>
       <ThemeProvider theme={theme}>
         <Grid container spacing={1}>

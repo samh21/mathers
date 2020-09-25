@@ -1,4 +1,5 @@
 {
+  "mongoURI": "mongodb+srv://siteaccess:Casino123!@appconnections-cdw0b.mongodb.net/mathers?retryWrites=true&w=majority",
   "shopEmail": "icecreamhomedelivery@hotmail.com",
   "shopEmailPass": "VanillaChocolateStrawberry2000"
 }

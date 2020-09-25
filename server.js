@@ -2,7 +2,7 @@ const express = require('express');
 const connectDB = require('./config/db');
 const path = require('path');
 const helmet = require('helmet');
-require('dotenv').config();
+// require('dotenv').config();
 
 const app = express();
 

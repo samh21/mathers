@@ -12,6 +12,8 @@ app.use(
   })
 );
 
+console.log(process.env);
+
 // Connect DB
 connectDB();
 

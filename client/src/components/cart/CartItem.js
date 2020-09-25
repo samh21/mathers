@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../CartContext';
 import {
   Grid,
+  Box,
   Typography,
   Chip,
   FormControl,
@@ -20,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CartItem = ({ data }) => {
-  console.log(data);
   const classes = useStyles();
   const { cart } = useContext(CartContext);
   const [cartTotal, setCartTotal] = cart;
@@ -56,54 +56,55 @@ const CartItem = ({ data }) => {
         justify="space-between"
         style={{ marginBottom: '5px' }}
       >
-        <Grid item xs={2}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          style={{ width: '100%' }}
+        >
           <img className={classes.image} src={data.link} alt={data.name} />
-        </Grid>
-        <Grid item container xs={8}>
-          <Grid item xs={12}>
-            <Typography variant="subtitle1" gutterBottom>
-              {data.name}
-            </Typography>
+
+          <Grid container style={{ marginLeft: '10px' }}>
+            <Grid item xs={10}>
+              <Typography variant="subtitle1" gutterBottom>
+                {data.name}
+              </Typography>
+            </Grid>
+            <Grid item xs={10}>
+              {data.vegan && (
+                <Chip
+                  size="small"
+                  label="Vegan"
+                  color="secondary"
+                  variant="outlined"
+                />
+              )}
+              {data.gluten && (
+                <Chip
+                  size="small"
+                  label="Gluten"
+                  color="secondary"
+                  variant="outlined"
+                />
+              )}
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            {data.vegan && (
-              <Chip
-                size="small"
-                label="Vegan"
-                color="secondary"
-                variant="outlined"
-              />
-            )}
-            {data.gluten && (
-              <Chip
-                size="small"
-                label="Gluten"
-                color="secondary"
-                variant="outlined"
-              />
-            )}
-          </Grid>
-        </Grid>
-        <Grid item xs={2} container justify="flex-end">
-          <Grid>
-            <FormControl>
-              <InputLabel htmlFor="age-native-simple">Quantity</InputLabel>
-              <Select native id={data.id} value={data.qty} onChange={updateQty}>
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={4}>4</option>
-                <option value={5}>5</option>
-                <option value={6}>6</option>
-                <option value={7}>7</option>
-                <option value={8}>8</option>
-                <option value={9}>9</option>
-                <option value={10}>10</option>
-                <option value={0}>Remove</option>
-              </Select>
-            </FormControl>
-          </Grid>
-        </Grid>
+          <FormControl>
+            <InputLabel htmlFor="age-native-simple">Quantity</InputLabel>
+            <Select native id={data.id} value={data.qty} onChange={updateQty}>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+              <option value={6}>6</option>
+              <option value={7}>7</option>
+              <option value={8}>8</option>
+              <option value={9}>9</option>
+              <option value={10}>10</option>
+              <option value={0}>Remove</option>
+            </Select>
+          </FormControl>
+        </Box>
       </Grid>
     </>
   );

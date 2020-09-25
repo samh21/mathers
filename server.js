@@ -3,12 +3,11 @@ const connectDB = require('./config/db');
 const path = require('path');
 const helmet = require('helmet');
 
+const app = express();
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
-
-const app = express();
-
 app.use(
   helmet({
     contentSecurityPolicy: false,

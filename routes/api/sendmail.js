@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const config = require('config');
-const shopEmail = config.get('shopEmail');
-const shopEmailPass = config.get('shopEmailPass');
+const shopEmail = process.env.SHOP_EMAIL;
+const shopEmailPass = process.env.SHOP_EMAIL_PASS;
 const Order = require('../../models/Order');
 const nodemailer = require('nodemailer');
 const {

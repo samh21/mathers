@@ -12,7 +12,7 @@ app.use(
   })
 );
 
-console.log(process.env);
+console.log(process.env.MONGO_URI);
 
 // Connect DB
 connectDB();

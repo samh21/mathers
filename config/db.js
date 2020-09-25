@@ -1,16 +1,14 @@
 const mongoose = require('mongoose');
 const config = require('config');
 require('dotenv').config();
+const db = config.get('mongoURI');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(
-      'mongodb+srv://siteaccess:Casino123!@appconnections-cdw0b.mongodb.net/mathers?retryWrites=true&w=majority',
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
-    );
+    await mongoose.connect(db, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log('MongoDB Connected');
   } catch (err) {
     console.error(err.message);

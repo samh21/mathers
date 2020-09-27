@@ -1,0 +1,11 @@
+
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:9
+
+    steps:
+      - checkout
+      - run: cd client && npm install
+      - run: cd client && npm test

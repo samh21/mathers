@@ -1,16 +1,17 @@
+
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      - node/test
-steps:
-  - run:
-    name: change dir
-    command: |
-      cd client
-  - run:
-    name: install dependencies
-    command: |
-      npm install
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:9
+
+    steps:
+      - checkout
+
+      # todo: find nicer solution than constantly "cd"ing to unit_testing
+      - run: cd client && npm install
+
+      - run: cd client && npm test
+
+      # TODO: add caching to speed things up.

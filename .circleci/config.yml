@@ -1,0 +1,17 @@
+
+version: 2.1
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:9
+
+    steps:
+      - checkout
+
+      # todo: find nicer solution than constantly "cd"ing to unit_testing
+      - run: cd client && npm install
+
+      - run: cd client && npm test
+
+      # TODO: add caching to speed things up.

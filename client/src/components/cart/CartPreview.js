@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../CartContext';
 import { Link, withRouter } from 'react-router-dom';
 import { IconButton, Badge } from '@material-ui/core';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ShoppingCart from '@material-ui/icons/ShoppingCart';
 
 const CartPreview = () => {
   const { cart } = useContext(CartContext);
@@ -23,7 +23,7 @@ const CartPreview = () => {
           <Link to="/cart">
             <IconButton style={{ color: '#007ea7' }}>
               <Badge badgeContent={numberOfItems} color="secondary">
-                <ShoppingCartIcon />
+                <ShoppingCart />
               </Badge>
             </IconButton>
           </Link>
